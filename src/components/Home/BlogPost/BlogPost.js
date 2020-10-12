@@ -20,4 +20,5 @@ const BlogPost = (props) => {
     );
 };
 
+
 export default BlogPost;

@@ -7,21 +7,21 @@ import Testimonial from '../Testimonial/Testimonial';
 import Blogs from '../Blogs/Blogs';
 import Doctors from '../Doctors/Doctors';
 import Contact from '../Contact/Contact';
-import Footer from '../Footer/Footer';
+import Footer from '../../Shared/Footer/Footer';
 
 
 const Home = () => {
     return (
         <div>
-             <Header /> 
-             <Services /> 
-             <FeaturedService /> 
-             <MakeAppointment /> 
-             <Testimonial /> 
-             <Blogs />
-             <Doctors />
-             <Contact />
-             <Footer />
+            <Header />
+            <Services />
+            <FeaturedService />
+            <MakeAppointment />
+            <Testimonial />
+            <Blogs />
+            <Doctors />
+            <Contact />
+            <Footer />
         </div>
     );
 };
