@@ -6,7 +6,6 @@ import BookAppointment from '../BookAppointment/BookAppointment';
 
 const Appointment = () => {
     const [selectedDate, setSelectedDate] = useState(new Date());
-    // console.log(selectedDate)
     const handleDateChange = date => {
         setSelectedDate(date);
         //AppointmentHeader theke props hishave tar ze calendar er date ache oi ta theke date ta ke nitechi, eta amra Appointment e nichi ei korone zo Appointment e modde zothe component ache oigular modde date ta ke padano zay

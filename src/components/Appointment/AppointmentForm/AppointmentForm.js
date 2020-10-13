@@ -21,14 +21,31 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn, date }) => {
 
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => {
-        console.log(data)
-        closeModal();
+         
+         data.service = appointmentOn;
+         data.date = date;
+         data.created = new Date();
+ 
+        fetch('http://localhost:5000/addAppointment', {
+            method: 'POST',
+            headers: {'content-type': 'application/json' },
+            body: JSON.stringify(data)
+
+          })
+        .then(res => res.json())
+        .then(success => {
+            if (success) {
+              closeModal();
+              alert('Appointment Created successfully....')
+            }
+        })
+       
     };
-     
-    const history = useHistory()
-    const appointmentComplete = () => {
-          history.push('/temp')
-    }
+
+    // const history = useHistory()
+    // const appointmentComplete = () => {
+    //     history.push('/temp')
+    // }
 
     return (
         <div>
@@ -40,7 +57,7 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn, date }) => {
             >
 
                 <h2 className="text_brand text-center">{appointmentOn}</h2>
-               <p  className="text-secondary text-center"> <small>ON {date.toDateString()}</small></p>
+                <p className="text-secondary text-center"> <small>ON {date.toDateString()}</small></p>
                 <form className="p-5" onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-group">
                         <input type="text" ref={register({ required: true })} name="name" placeholder="Your Name" className="form-control" />
@@ -78,7 +95,8 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn, date }) => {
                     </div>
 
                     <div className="form-group text-right">
-                        <button type="submit" onClick={appointmentComplete} className="btn_brand">Send</button>
+                        <button type="submit"  className="btn_brand">Send</button>
+                        {/* onClick={appointmentComplete} */}
                     </div>
                 </form>
             </Modal>

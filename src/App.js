@@ -8,9 +8,10 @@ import {
 } from "react-router-dom";
 import Home from './components/Home/Home/Home';
 import Appointment from './components/Appointment/Appointment/Appointment';
-import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
-import Login from './components/Login/Login/Login';
-import Temp from './components/Temp';
+import Dashboard from './components/Dashboard/Dashboard/Dashboard';
+// import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
+// import Login from './components/Login/Login/Login';
+// import Temp from './components/Temp';
 
 export const UserContext = createContext();
 
@@ -29,12 +30,15 @@ function App() {
           <Route path="/appointment">
             <Appointment></Appointment>
           </Route>
-          <Route path="/login">
-            <Login></Login>
+          <Route path="/dashboard">
+            <Dashboard></Dashboard>
           </Route>
-          <PrivateRoute path="/temp">
+          {/* <Route path="/login">
+            <Login></Login>
+          </Route> */}
+          {/* <PrivateRoute path="/temp">
             <Temp></Temp>
-          </PrivateRoute>
+          </PrivateRoute> */}
         </Switch>
       </Router>
     </UserContext.Provider>
