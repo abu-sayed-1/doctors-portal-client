@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import { useForm } from "react-hook-form"
+import { useHistory } from 'react-router-dom';
 
 const customStyles = {
     content: {
@@ -21,7 +22,13 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn, date }) => {
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => {
         console.log(data)
+        closeModal();
     };
+     
+    const history = useHistory()
+    const appointmentComplete = () => {
+          history.push('/temp')
+    }
 
     return (
         <div>
@@ -71,7 +78,7 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn, date }) => {
                     </div>
 
                     <div className="form-group text-right">
-                        <button type="submit" className="btn_brand">Send</button>
+                        <button type="submit" onClick={appointmentComplete} className="btn_brand">Send</button>
                     </div>
                 </form>
             </Modal>
