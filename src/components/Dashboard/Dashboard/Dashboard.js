@@ -6,14 +6,15 @@ import 'react-calendar/dist/Calendar.css';
 import { UserContext } from '../../../App';
 
 const Dashboard = () => {
-    const {appointmentDataTable, setAppointmentDataTable} = useContext(UserContext)
+    const {loggedInUser, setLoggedInUser} = useContext(UserContext);
     const [appointments, setAppointments] = useState([]);
-    setAppointmentDataTable(appointments)
     const [selectedDate, setSelectedDate] = useState(new Date());
     const handleDateChange = date => {
         setSelectedDate(date);
 
     };
+
+
 
     useEffect(() => {
 
@@ -21,7 +22,7 @@ const Dashboard = () => {
 
             method: 'POST',
             headers: { 'content-type': 'application/json' },
-            body: JSON.stringify({ date: selectedDate })
+            body: JSON.stringify({ date: selectedDate, email: loggedInUser.email })
 
         })
             .then(res => res.json())
