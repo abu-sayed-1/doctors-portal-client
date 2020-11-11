@@ -6,15 +6,15 @@ import chair from "../../../images/chair.png"
 const AppointmentHeader = ({ handleDateChange }) => {
     return (
         <main style={{ height: '600px' }} className="d-flex align-items-center">
-            <div className="col-md-4 offset-md-1">
+             <div className="col-md-4 offset-md-1">
                 <h1 style={{ color: '#3A4256' }}>APPOINTMENT</h1>
-                <Calendar
+                 <Calendar
                     onChange={handleDateChange}
-                    value={new Date}
-                />
+                      value={new Date}
+                 />
             </div>
-            <div className="col-md-6">
-                <img src={chair} alt="" className="img-fluid" />
+                <div className="col-md-6">
+                  <img src={chair} alt="" className="img-fluid" />
             </div>
         </main>
     );

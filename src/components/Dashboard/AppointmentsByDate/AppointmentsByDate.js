@@ -7,7 +7,7 @@ const AppointmentsByDate = ({ appointments }) => {
             <h2 className="text_brand text-center">Appointments</h2>
             {
                 appointments.length ?
-                    <AppointmentShortList appointments={appointments} ></AppointmentShortList>
+                    <AppointmentShortList appointments={appointments} />
                     :
                     <div className="p-5">
                         <h4 className="lead text-center">No Appointments for this Date</h4>

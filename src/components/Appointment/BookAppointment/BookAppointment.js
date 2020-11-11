@@ -51,13 +51,12 @@ const BookAppointment = ({date}) => {
     return (
        <section>
            <h2 className="text-center text_brand mb-5 pb-5">Available Appointment on  {date.toDateString()}</h2>
-                                                          {/* ei code diye tumi ze date^^^^^^^^^^^^^^^^ Appointment theke aste che ze date oi ta ke String e convert kore dicho ei code diye zeno h2 tag er modde use korte paro */}
-           <div className="row">
+             <div className="row">
                {
-                   bookingData.map(booking => <BookingCard key={booking._id} booking={booking} date={date}></BookingCard> )
+                   bookingData.map(booking => <BookingCard key={booking._id} booking={booking} date={date} /> )
                }
-           </div>
-       </section>
+          </div>
+    </section>
     );
 };
 

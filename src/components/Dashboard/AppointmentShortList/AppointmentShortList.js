@@ -3,16 +3,15 @@ import React from 'react';
 const AppointmentShortList = ({appointments}) => {
     return (
         <table className="table table-borderless">
-            <thead>
-                <tr>
+          <thead>
+             <tr>
                 <th className="text-secondary" scope="col">Name</th>
                 <th className="text-secondary" scope="col">Phone</th>
                 <th className="text-secondary" scope="col">Email</th>
                 <th className="text-secondary" scope="col">Email</th>
-                </tr>
-            </thead>
-            <tbody>
-
+             </tr>
+          </thead>
+        <tbody>
                 <tr>
                     <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, ipsam.</td>
                     <td>Aliquam totam quis ad tempora officia rerum ipsum quibusdam maiores.</td>
