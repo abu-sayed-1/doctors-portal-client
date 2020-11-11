@@ -4,7 +4,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import Home from './components/Home/Home/Home';
 import Appointment from './components/Appointment/Appointment/Appointment';
@@ -30,19 +29,19 @@ function App() {
             <Home />
           </Route>
           <Route path="/appointment">
-            <Appointment></Appointment>
+            <Appointment />
           </Route>
           <Route path="/appointmentDataTable">
-            <AppointmentDataTable></AppointmentDataTable>
+            <AppointmentDataTable />
           </Route>
           <Route path="/addDoctor">
-            <AddDoctor></AddDoctor>
+            <AddDoctor />
           </Route>
           <Route path="/login">
             <Login></Login>
           </Route>
           <PrivateRoute path="/dashboard">
-            <Dashboard></Dashboard>
+            <Dashboard />
           </PrivateRoute>
         </Switch>
       </Router>
